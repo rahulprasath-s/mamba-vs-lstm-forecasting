@@ -1,20 +1,22 @@
 # Data
 
-Place source CSV files in `data/raw/`.
+The default experiment expects the Jena Climate CSV at:
 
-Use `data/processed/` for cleaned, normalized, or feature-engineered CSV files.
-
-Expected minimum CSV shape for `main.py`:
-
-```csv
-value
-1.0
-1.2
-1.4
+```text
+data/jena_climate_2009_2016.csv
 ```
 
-Pass a different target column with:
+The training script uses these columns by default:
+
+- `T (degC)`
+- `p (mbar)`
+- `rh (%)`
+
+Use a different CSV or columns with:
 
 ```bash
-python main.py --csv data/raw/your_file.csv --target close
+python train.py \
+  --data-path data/your_file.csv \
+  --features "T (degC)" "p (mbar)" "rh (%)" \
+  --target "T (degC)"
 ```

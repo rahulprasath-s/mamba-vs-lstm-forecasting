@@ -25,7 +25,6 @@ class _ResidualMambaBlock(nn.Module):
 
 
 class _FallbackSequenceMixer(nn.Module):
-    """Small gated temporal mixer used when mamba-ssm is not installed."""
 
     def __init__(self, d_model: int, dropout: float):
         super().__init__()
@@ -48,7 +47,6 @@ class _FallbackSequenceMixer(nn.Module):
 
 
 class MambaForecastModel(nn.Module):
-    """Mamba forecaster with a lightweight fallback mixer for local experiments."""
 
     def __init__(
         self,

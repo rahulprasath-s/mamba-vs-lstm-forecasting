@@ -9,6 +9,9 @@ venv/
 env/
 .DS_Store
 .matplotlib-cache/
+.cache/
 results/*.png
 results/*.csv
+results/*.json
+results/*.pt
 data/processed/*.csv

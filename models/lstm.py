@@ -2,7 +2,6 @@ from torch import nn
 
 
 class LSTMForecastModel(nn.Module):
-    """LSTM forecaster that predicts a fixed-size horizon from the final hidden state."""
 
     def __init__(
         self,
